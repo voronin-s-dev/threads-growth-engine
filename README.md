@@ -45,13 +45,13 @@ Clone this repository into your global or project skills directory:
 
 ```bash
 # In your project root:
-git clone https://github.com/<your-username>/threads-growth-engine.git .agents/skills/threads-growth-engine
+git clone https://github.com/voronin-s-dev/threads-growth-engine.git .agents/skills/threads-growth-engine
 
 # Or into your global agent skills folder:
 # Windows:
-git clone https://github.com/<your-username>/threads-growth-engine.git %USERPROFILE%\.gemini\config\skills\threads-growth-engine
+git clone https://github.com/voronin-s-dev/threads-growth-engine.git %USERPROFILE%\.gemini\config\skills\threads-growth-engine
 # Mac/Linux:
-git clone https://github.com/<your-username>/threads-growth-engine.git ~/.gemini/config/skills/threads-growth-engine
+git clone https://github.com/voronin-s-dev/threads-growth-engine.git ~/.gemini/config/skills/threads-growth-engine
 ```
 
 ### Option 2: Copy as a Project Module
