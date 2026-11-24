@@ -28,10 +28,10 @@ The agent produces three to four distinct options:
 
 ---
 
-## 3. Formatting and Punch Check
+## 3. Formatting and Inline Micro-Judge
 
 1. The agent marks one option as `(Recommended)`.
-2. The agent appends a one-line reader impact rating under each option:
-   - Rating evaluates hook speed, clarity, and reply likelihood.
+2. The agent appends a mandatory one-line micro-judge check under every option:
+   - `[Chars: N/500 | Thumb-Stop: X/10 | Tone: Peer / Zero Flattery]`
 3. The comment voice remains respectful, confident, and conversational.
 4. The author never uses flattery, spam links, or generic agreement ("Great post!").

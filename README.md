@@ -19,9 +19,10 @@ Whether your niche is **software engineering, fitness, B2B sales, design, or cry
    * If any information is missing, the agent asks **only 1–2 targeted questions** instead of forcing you to fill lengthy questionnaires.
    * Caches your profile in `THREADS_PROFILE.md` to prevent unnecessary token consumption.
 
-2. **Viral Reverse-Engineering (Deconstruction):**
-   * Paste any viral post from any competitor.
-   * The agent strips away their topic, extracts the psychological hook formula, and transposes the structure into a high-retention post for *your* niche.
+2. **Smart Screenshot Triage & Viral Reverse-Engineering:**
+   * Drop a screenshot, link, or text of any Threads post.
+   * The agent automatically checks whether you already commented, whether it is a reply to you, or a thread continuation.
+   * For fresh viral posts, it delivers 1-click comments immediately and automatically deconstructs the hook formula for *your* niche. For ongoing dialogues, it skips deconstruction and replies in context.
 
 3. **1-Click Reactive Commenting (Early Follower Engine):**
    * Instant delivery of 3–4 high-impact comment angles (<500 characters): *Contrarian Frame*, *Hidden Nuance*, *Grounded Case*, and *Witty Mirror*.

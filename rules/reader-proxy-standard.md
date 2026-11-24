@@ -41,9 +41,10 @@
 
 ---
 
-## 3. Standard Audit Output Structure
+## 3. Mandatory Pre-Delivery Lock and Output Structure
 
-The agent outputs the review in three distinct sections:
+1. The agent runs this audit on every standalone post, anchor thread, and transposed viral draft.
+2. The agent never delivers a draft without outputting the three audit sections below:
 
 ```markdown
 ### Phase 1: Technical & Anti-Slop Audit

@@ -37,22 +37,42 @@ The agent initializes the user profile through autonomous workspace inspection.
 
 ---
 
-## 2. Protocol 2: Viral Post Reverse-Engineering
+## 2. Protocol 2: Incoming Post & Screenshot Triage
 
-The agent deconstructs external viral posts to build customized niche templates.
+When the user provides a screenshot, pasted text, or link of a Threads post, the agent runs triage first.
+
+### Step 1: Three-Point Disqualifier Check
+1. **Prior Comment Check:** Does the screenshot show the user handle or an existing comment from the user?
+2. **Reply Check:** Is the post a direct reply to the user's own comment?
+3. **Continuation Check:** Is the post a continuation of a thread already processed in this session?
+
+### Step 2: Routing Decision
+* **Route A — Fresh Viral Post (NO to all three checks):**
+  1. The agent immediately executes **Protocol 4 (1-Click Reactive Commenting)** and delivers comment options first.
+  2. The agent automatically executes **Protocol 3 (Viral Post Reverse-Engineering)** on the same post.
+  3. The agent runs **Protocol 6 (Dual-Phase Quality Gate)** on any adapted draft before presenting it.
+* **Route B — Ongoing Dialogue or Continuation (YES to any check):**
+  1. The agent skips **Protocol 3 (Viral Post Reverse-Engineering)** completely.
+  2. The agent generates contextual continuation replies via **Protocol 4** only.
+
+---
+
+## 3. Protocol 3: Viral Post Reverse-Engineering
+
+The agent deconstructs fresh external viral posts (from screenshots, text, or links) to build niche templates.
 
 ### Workflow:
-1. The user provides a viral post text or reference link.
+1. The agent reads the viral post from the screenshot, text, or link.
 2. The agent isolates the first sentence and extracts the structural hook formula.
 3. The agent identifies the psychological tension driving audience engagement.
 4. The agent extracts the comment trigger located in the closing lines.
 5. The agent transposes the structural formula into the user's specific niche from `THREADS_PROFILE.md`.
 6. The agent appends the raw post and transposed formula to `FEW_SHOT_STYLE_BANK.md`.
-7. The agent preserves structural syntax while replacing all original domain concepts.
+7. The agent runs the adapted draft through **Protocol 6 (Dual-Phase Quality Gate)** before delivery.
 
 ---
 
-## 3. Protocol 3: 1-Click Reactive Commenting
+## 4. Protocol 4: 1-Click Reactive Commenting
 
 The agent generates rapid reply comments for incoming viral threads.
 
@@ -67,13 +87,14 @@ The agent generates rapid reply comments for incoming viral threads.
    - **Option 3: Grounded Experience.** Shares a compact, relatable personal scene.
    - **Option 4: Witty Mirror.** Reflects the paradox with dry relatable humor.
 6. The agent marks one option as `(Recommended)`.
-7. The agent appends a one-line reader impact rating below each option.
+7. **Mandatory Inline Micro-Judge:** The agent prints a one-line check below every option:
+   - Format: `[Chars: N/500 | Thumb-Stop: X/10 | Tone: Peer / Zero Flattery]`
 
 ---
 
-## 4. Protocol 4: High-Retention Anchor Thread Writing
+## 5. Protocol 5: High-Retention Anchor Thread Writing
 
-The agent crafts five-post anchor threads following the proven viral architecture.
+The agent crafts standalone posts and five-post anchor threads following the proven viral architecture.
 
 ### Thread Structure:
 1. **Post 1 (Hook and Scene):**
@@ -100,22 +121,23 @@ The agent crafts five-post anchor threads following the proven viral architectur
 
 ---
 
-## 5. Protocol 5: Dual-Phase Quality Gate
+## 6. Protocol 6: Dual-Phase Quality Gate (Mandatory Pre-Delivery Lock)
 
-Every thread draft must pass two deterministic verification gates before publishing.
+Every standalone post, anchor thread, and transposed viral draft must pass both gates before presentation.
+The agent must never present a post or thread draft without outputting the Phase 1 and Phase 2 audit block.
 
 ### Phase 1: Technical & Anti-Slop Gate
-1. The agent runs `py scripts/lint_threads.py <file>` or checks text in-memory.
+1. The agent runs `py scripts/lint_threads.py <file>` or `py scripts/lint_threads.py --text "..."`.
 2. The agent enforces zero occurrences of banned AI cliches.
 3. The agent validates character limits on every individual post.
 4. Status must be 100% clean PASS.
 
 ### Phase 2: Reader Proxy Gate (Cold Audience Simulation)
 The agent simulates an impatient user scrolling a smartphone feed with a 1.5-second attention span.
-The agent scores the draft on four strict criteria:
+The agent scores the draft on four strict criteria and prints the scorecard:
 1. **Thumb-Stop:** Does the opening line force an instant scroll pause? (Target: >= 8/10).
 2. **Tone Check:** Does the voice sound like an equal peer? Text contains zero preachiness.
 3. **Brevity Cut:** The agent cuts 20% to 30% of unnecessary explanatory text.
 4. **Discussion Trigger:** Does the ending provoke replies or counter-arguments?
 
-The agent outputs the trimmed, finalized text alongside the structured audit scores.
+The agent outputs the trimmed, finalized text alongside the mandatory audit scorecard.
